@@ -1,5 +1,6 @@
 package com.dts.casemanagerfrontendandroid.ui.mainactivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.dts.casemanagerfrontendandroid.R;
 import com.dts.casemanagerfrontendandroid.databinding.ActivityMainBinding;
 import com.dts.casemanagerfrontendandroid.model.Task;
+import com.dts.casemanagerfrontendandroid.ui.updatetaskactivity.UpdateTaskActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
     private ArrayList<Task> tasks;
     private RecyclerView recyclerView;
     private TaskAdapter taskAdapter;
+    private static final String TASK_KEY = "task";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
 
     @Override
     public void onItemClick(int position) {
-
+        Intent intent = new Intent(MainActivity.this, UpdateTaskActivity.class);
+        intent.putExtra(TASK_KEY, tasks.get(position));
+        startActivity(intent);
     }
 }
