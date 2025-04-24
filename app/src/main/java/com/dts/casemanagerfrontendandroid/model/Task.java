@@ -1,18 +1,24 @@
 package com.dts.casemanagerfrontendandroid.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.util.Log;
+
+import androidx.annotation.NonNull;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.library.baseAdapters.BR;
 
 import java.time.LocalDateTime;
 
-public class Task extends BaseObservable {
+public class Task extends BaseObservable implements Parcelable {
     private Long id;
     private String title;
     private String description;
     private String status;
     private String createdDate;
     private String dueDate;
+    private static final String TAG = "task";
 
     public Task(Long id, String title, String description, String status, String createdDate, String dueDate) {
         this.id = id;
@@ -25,6 +31,29 @@ public class Task extends BaseObservable {
 
     public Task() {
     }
+
+    protected Task(Parcel in) {
+        id = in.readLong();
+        title = in.readString();
+        description = in.readString();
+        status = in.readString();
+        createdDate = in.readString();
+        dueDate = in.readString();
+    }
+
+    public static final Creator<Task> CREATOR = new Creator<Task>() {
+        @Override
+        public Task createFromParcel(Parcel in) {
+            Task taskFromParcel = new Task(in);
+            Log.i(TAG, "createFromParcel: taskFromParcel: " + taskFromParcel.toString());
+            return taskFromParcel;
+        }
+
+        @Override
+        public Task[] newArray(int size) {
+            return new Task[size];
+        }
+    };
 
     @Bindable
     public Long getId() {
@@ -84,5 +113,34 @@ public class Task extends BaseObservable {
     public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
         notifyPropertyChanged(BR.dueDate);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        Log.i(TAG, "writeToParcel: task using the writeToParcel method: " + this.toString());
+
+        dest.writeLong(id);
+        dest.writeString(title);
+        dest.writeString(description);
+        dest.writeString(status);
+        dest.writeString(createdDate);
+        dest.writeString(dueDate);
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", status='" + status + '\'' +
+                ", createdDate='" + createdDate + '\'' +
+                ", dueDate='" + dueDate + '\'' +
+                '}';
     }
 }
