@@ -11,10 +11,10 @@ public class Task extends BaseObservable {
     private String title;
     private String description;
     private String status;
-    private LocalDateTime createdDate;
-    private LocalDateTime dueDate;
+    private String createdDate;
+    private String dueDate;
 
-    public Task(Long id, String title, String description, String status, LocalDateTime createdDate, LocalDateTime dueDate) {
+    public Task(Long id, String title, String description, String status, String createdDate, String dueDate) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -67,21 +67,21 @@ public class Task extends BaseObservable {
     }
 
     @Bindable
-    public LocalDateTime getCreatedDate() {
+    public String getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(LocalDateTime createdDate) {
+    public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
         notifyPropertyChanged(BR.createdDate);
     }
 
     @Bindable
-    public LocalDateTime getDueDate() {
+    public String getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(LocalDateTime dueDate) {
+    public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
         notifyPropertyChanged(BR.dueDate);
     }
