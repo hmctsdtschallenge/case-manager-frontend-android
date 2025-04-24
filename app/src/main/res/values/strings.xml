@@ -7,4 +7,7 @@
     <string name="due_date_hint">Task due date</string>
     <string name="created_date_label">Created:</string>
     <string name="due_date_label">Due:</string>
+    <string name="update_task_header">Update or Delete Task</string>
+    <string name="update_task_button">Update</string>
+    <string name="delete_task_button">Delete</string>
 </resources>
