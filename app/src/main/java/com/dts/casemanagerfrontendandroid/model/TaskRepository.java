@@ -68,6 +68,7 @@ public class TaskRepository {
                 if (response.code() == 200) {
                     List<Task> tasks = response.body();
                     mutableLiveData.setValue(tasks);
+                    Log.i(TAG, "GET request (getAllTasks) success. HTTP code: " + response.code());
                 } else {
                     Toast.makeText(application.getApplicationContext(),
                             "Tasks not retrieved",
