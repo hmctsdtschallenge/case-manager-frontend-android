@@ -14,4 +14,7 @@
     <string name="create_task_button">Create</string>
     <string name="tasks_header">Tasks</string>
     <string name="status_label">Enter status below. Valid statuses are: Not yet started, In progress, Complete:</string>
+    <string name="edit_due_date_hint">"Due date, in format YYYY-MM-DDTHH:MM:SS. e.g. 2025-01-01T01:01:01"</string>
+    <string name="edit_created_date_hint">Created date, in format YYYY-MM-DDTHH:MM:SS. e.g. 2025-01-01T01:01:01</string>
+    <string name="edit_status_hint">Task status. Valid statuses are: Not yet started, In progress, Complete</string>
 </resources>
