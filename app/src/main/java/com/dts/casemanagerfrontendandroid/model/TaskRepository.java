@@ -89,10 +89,10 @@ public class TaskRepository {
         return mutableLiveData;
     }
 
-    public void patchTaskStatus(long id, String status) {
+    public void patchTaskStatus(long id, StatusDTO statusDTO) {
         TaskApiService taskApiService = RetrofitInstance.getService();
 
-        Call<Task> call = taskApiService.patchTaskStatus(id, status);
+        Call<Task> call = taskApiService.patchTaskStatus(id, statusDTO);
 
         call.enqueue(new Callback<Task>() {
             @Override

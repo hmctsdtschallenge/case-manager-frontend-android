@@ -1,5 +1,6 @@
 package com.dts.casemanagerfrontendandroid.service;
 
+import com.dts.casemanagerfrontendandroid.model.StatusDTO;
 import com.dts.casemanagerfrontendandroid.model.Task;
 import com.dts.casemanagerfrontendandroid.model.TaskDTO;
 
@@ -25,7 +26,7 @@ public interface TaskApiService {
     public Call<List<Task>> getAllTasks();
 
     @PATCH("tasks/{id}")
-    public Call<Task> patchTaskStatus(@Path("id") long id, @Body String status);
+    public Call<Task> patchTaskStatus(@Path("id") long id, @Body StatusDTO statusDTO);
 
     @DELETE("tasks/{id}")
     public Call<Void> deleteTask(@Path("id") long id);

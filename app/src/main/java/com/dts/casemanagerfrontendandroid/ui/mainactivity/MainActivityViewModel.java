@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.dts.casemanagerfrontendandroid.model.StatusDTO;
 import com.dts.casemanagerfrontendandroid.model.Task;
 import com.dts.casemanagerfrontendandroid.model.TaskDTO;
 import com.dts.casemanagerfrontendandroid.model.TaskRepository;
@@ -32,9 +33,9 @@ public class MainActivityViewModel extends AndroidViewModel {
         taskRepository.postTask(taskDTO);
     }
 
-    public void patchTaskStatus(long id, String status) {
+    public void patchTaskStatus(long id, StatusDTO statusDTO) {
         Log.i(TAG, "patchTaskStatus executed");
-        taskRepository.patchTaskStatus(id, status);
+        taskRepository.patchTaskStatus(id, statusDTO);
     }
 
     public void deleteTask(long id) {

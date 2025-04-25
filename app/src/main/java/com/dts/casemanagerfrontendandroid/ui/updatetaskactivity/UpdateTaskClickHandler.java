@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.dts.casemanagerfrontendandroid.model.StatusDTO;
 import com.dts.casemanagerfrontendandroid.model.Task;
 import com.dts.casemanagerfrontendandroid.ui.mainactivity.MainActivity;
 import com.dts.casemanagerfrontendandroid.ui.mainactivity.MainActivityViewModel;
@@ -48,9 +49,10 @@ public class UpdateTaskClickHandler {
             Intent intent = new Intent(context, MainActivity.class);
 
             long taskId = task.getId();
-            String taskStatus = task.getStatus();
 
-            viewModel.patchTaskStatus(taskId, taskStatus);
+            StatusDTO statusDTO = new StatusDTO(task.getStatus());
+
+            viewModel.patchTaskStatus(taskId, statusDTO);
 
             context.startActivity(intent);
         }
