@@ -12,4 +12,5 @@
     <string name="delete_task_button">Delete</string>
     <string name="create_task_header">Create New Task</string>
     <string name="create_task_button">Create</string>
+    <string name="tasks_header">Tasks</string>
 </resources>
