@@ -42,6 +42,8 @@ public class CreateTaskClickHandler {
                     task.getCreatedDate(),
                     task.getDueDate());
             mainActivityViewModel.postTask(taskDTO);
+
+            //TODO add something here to make sure that post request has finished before reloading the MainActivity
             context.startActivity(intent);
             Log.i(TAG, "onSubmitBtnClick: valid task submitted");
         }

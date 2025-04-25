@@ -67,6 +67,7 @@
             app:layout_constraintBottom_toTopOf="@id/editStatus"
             />
 
+        <!--TODO change editStatus to drop down selection-->
         <EditText
             android:id="@+id/editStatus"
             android:text="@={task.status}"
@@ -81,6 +82,8 @@
             app:layout_constraintTop_toBottomOf="@id/editDescription"
             app:layout_constraintBottom_toTopOf="@id/editCreatedDate"
             />
+
+        <!--TODO change editCreatedDate to date selector and time selector-->
         <EditText
             android:id="@+id/editCreatedDate"
             android:text="@={task.createdDate}"
@@ -96,6 +99,7 @@
             app:layout_constraintBottom_toTopOf="@+id/editDueDate"
             />
 
+        <!--TODO change editDueDate to date selector and time selector-->
         <EditText
             android:id="@+id/editDueDate"
             android:text="@={task.dueDate}"

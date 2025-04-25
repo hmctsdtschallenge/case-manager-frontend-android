@@ -53,6 +53,7 @@ public class UpdateTaskClickHandler {
 
             viewModel.patchTaskStatus(taskId, statusDTO);
 
+            //TODO add something here to make sure that patch request has finished before reloading the MainActivity
             context.startActivity(intent);
         }
     }
@@ -60,6 +61,8 @@ public class UpdateTaskClickHandler {
     public void onDeleteBtnClick(View view) {
         Intent intent = new Intent(context, MainActivity.class);
         viewModel.deleteTask(task.getId());
+
+        //TODO add something here to make sure that delete request has finished before reloading the MainActivity
         context.startActivity(intent);
     }
 }
