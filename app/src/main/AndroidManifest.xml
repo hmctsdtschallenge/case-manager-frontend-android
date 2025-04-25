@@ -16,6 +16,9 @@
         android:theme="@style/Theme.CaseManagerFrontendAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".ui.createtask.CreateTaskActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.updatetaskactivity.UpdateTaskActivity"
             android:exported="false" />
         <activity
