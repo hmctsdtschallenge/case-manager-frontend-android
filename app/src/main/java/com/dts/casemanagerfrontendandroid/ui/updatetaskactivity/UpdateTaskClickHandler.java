@@ -42,7 +42,6 @@ public class UpdateTaskClickHandler {
                 task.getCreatedDate(),
                 task.getDueDate());
 
-        //0 is acceptable release year, stock and price in my API logic so have not checked int values here
         if(Objects.equals(updatedTask.getStatus(), "")) {
             Toast.makeText(context, "Task status cannot be empty", Toast.LENGTH_SHORT).show();
         } else {
