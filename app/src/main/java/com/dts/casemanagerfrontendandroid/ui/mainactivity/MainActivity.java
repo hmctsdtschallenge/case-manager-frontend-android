@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
     private ArrayList<Task> tasks;
     private RecyclerView recyclerView;
     private TaskAdapter taskAdapter;
+    private MainActivityClickHandler handler;
     private static final String TASK_KEY = "task";
 
     @Override
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
         activityMainBinding = DataBindingUtil.setContentView(this,
                 R.layout.activity_main
         );
+
+        handler = new MainActivityClickHandler(this);
+        activityMainBinding.setClickHandler(handler);
 
         mainActivityViewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
 
