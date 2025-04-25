@@ -10,7 +10,7 @@
     </data>
     <androidx.cardview.widget.CardView
         android:elevation="20sp"
-        android:backgroundTint="@color/grey"
+        android:backgroundTint="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -31,7 +31,6 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="26sp"
-                android:fontFamily="sans-serif-condensed"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:hint="@string/title_hint"
@@ -48,8 +47,6 @@
                 android:textStyle="normal"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:fontFamily="sans-serif-condensed"
-
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:hint="@string/status_hint"
@@ -67,7 +64,6 @@
                 android:textStyle="normal"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:fontFamily="sans-serif-condensed"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
@@ -85,7 +81,6 @@
                 android:textStyle="normal"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:fontFamily="sans-serif-condensed"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
@@ -104,7 +99,6 @@
                 android:textStyle="normal"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:fontFamily="sans-serif-condensed"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
@@ -117,13 +111,12 @@
 
             <TextView
                 android:id="@+id/createdDate"
-                android:text="@{task.createdDate}"
+                android:text="@{task.createdDate.substring(0, 10)}"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textStyle="normal"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:fontFamily="sans-serif-condensed"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
@@ -137,13 +130,12 @@
 
             <TextView
                 android:id="@+id/dueDate"
-                android:text="@{task.dueDate}"
+                android:text="@{task.dueDate.substring(0, 10)}"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textStyle="normal"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:fontFamily="sans-serif-condensed"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
@@ -154,8 +146,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/dueDateLabel"
                 app:layout_constraintBottom_toBottomOf="parent"
                 />
-
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
