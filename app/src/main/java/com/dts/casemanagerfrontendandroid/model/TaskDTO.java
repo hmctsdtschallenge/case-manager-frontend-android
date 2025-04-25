@@ -6,6 +6,6 @@ public record TaskDTO(
         String title,
         String description,
         String status,
-        LocalDateTime createdDate,
-        LocalDateTime dueDate) {
+        String createdDate,
+        String dueDate) {
 }
