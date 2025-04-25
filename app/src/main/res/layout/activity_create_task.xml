@@ -112,7 +112,7 @@
 
         <Button
             android:id="@+id/create"
-            android:onClick="@{clickHandler::onCreateBtnClicked}"
+            android:onClick="@{clickHandler::onCreateBtnClick}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/dark_blue"
@@ -128,7 +128,7 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/backButton"
-            android:onClick="@{clickHandler::onBackBtnClicked}"
+            android:onClick="@{clickHandler::onBackBtnClick}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10sp"

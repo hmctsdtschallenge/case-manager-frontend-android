@@ -110,7 +110,7 @@
 
         <Button
             android:id="@+id/submit"
-            android:onClick="@{clickHandler::onSubmitBtnClicked}"
+            android:onClick="@{clickHandler::onSubmitBtnClick}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/dark_blue"
@@ -126,7 +126,7 @@
 
         <Button
             android:id="@+id/delete"
-            android:onClick="@{clickHandler::onDeleteBtnClicked}"
+            android:onClick="@{clickHandler::onDeleteBtnClick}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/red"
@@ -142,7 +142,7 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/backButton"
-            android:onClick="@{clickHandler::onBackBtnClicked}"
+            android:onClick="@{clickHandler::onBackBtnClick}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10sp"

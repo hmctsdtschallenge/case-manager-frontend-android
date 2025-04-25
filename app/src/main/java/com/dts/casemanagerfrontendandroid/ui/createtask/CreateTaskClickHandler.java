@@ -23,7 +23,7 @@ public class CreateTaskClickHandler {
         this.mainActivityViewModel = mainActivityViewModel;
     }
 
-    public void onCreateBtnClicked(View view) {
+    public void onCreateBtnClick(View view) {
         if(
                 task.getTitle() == null || task.getTitle().isBlank() ||
                 task.getDescription() == null || task.getDescription().isEmpty() ||
@@ -32,7 +32,7 @@ public class CreateTaskClickHandler {
                 task.getDueDate() == null || task.getDueDate().isEmpty()
         ) {
             Toast.makeText(context,"Task fields cannot be empty",Toast.LENGTH_SHORT).show();
-            Log.i(TAG, "onSubmitBtnClicked: invalid task submitted");
+            Log.i(TAG, "onSubmitBtnClick: invalid task submitted");
         } else {
             Intent intent = new Intent(context, MainActivity.class);
             TaskDTO taskDTO = new TaskDTO(
@@ -43,11 +43,11 @@ public class CreateTaskClickHandler {
                     task.getDueDate());
             mainActivityViewModel.postTask(taskDTO);
             context.startActivity(intent);
-            Log.i(TAG, "onSubmitBtnClicked: valid task submitted");
+            Log.i(TAG, "onSubmitBtnClick: valid task submitted");
         }
     }
 
-    public void onBackBtnClicked(View view) {
+    public void onBackBtnClick(View view) {
         Intent intent = new Intent(context, MainActivity.class);
         context.startActivity(intent);
     }

@@ -26,13 +26,12 @@ public class UpdateTaskClickHandler {
         this.viewModel = viewModel;
     }
 
-    public void onBackBtnClicked(View view) {
-        Log.i(TAG, "onBackBtnClicked: method began execution");
+    public void onBackBtnClick(View view) {
         Intent intent = new Intent(context, MainActivity.class);
         context.startActivity(intent);
     }
 
-    public void onSubmitBtnClicked(View view) {
+    public void onSubmitBtnClick(View view) {
 
         Task updatedTask = new Task(
                 task.getId(),
@@ -57,7 +56,7 @@ public class UpdateTaskClickHandler {
         }
     }
 
-    public void onDeleteBtnClicked(View view) {
+    public void onDeleteBtnClick(View view) {
         Intent intent = new Intent(context, MainActivity.class);
         viewModel.deleteTask(task.getId());
         context.startActivity(intent);
