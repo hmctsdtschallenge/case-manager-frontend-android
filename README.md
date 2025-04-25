@@ -8,6 +8,7 @@ Gradle is used for dependency management.
 
 ### Requirements
 Java 17
+
 Android Studio
 
 ### Running locally
