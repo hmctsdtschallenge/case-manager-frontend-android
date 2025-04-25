@@ -26,12 +26,11 @@ public class CreateTaskClickHandler {
     public void onCreateBtnClick(View view) {
         if(
                 task.getTitle() == null || task.getTitle().isBlank() ||
-                task.getDescription() == null || task.getDescription().isEmpty() ||
                 task.getStatus() == null || task.getStatus().isEmpty() ||
                 task.getCreatedDate() == null || task.getCreatedDate().isEmpty() ||
                 task.getDueDate() == null || task.getDueDate().isEmpty()
         ) {
-            Toast.makeText(context,"Task fields cannot be empty",Toast.LENGTH_SHORT).show();
+            Toast.makeText(context,"Mandatory task fields cannot be empty",Toast.LENGTH_SHORT).show();
             Log.i(TAG, "onSubmitBtnClick: invalid task submitted");
         } else {
             Intent intent = new Intent(context, MainActivity.class);
