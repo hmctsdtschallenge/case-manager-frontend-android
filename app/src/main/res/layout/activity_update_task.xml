@@ -36,37 +36,98 @@
             android:paddingTop="10sp"
             android:paddingBottom="10sp"
             />
-        <TextView
-            android:id="@+id/title"
-            android:text="@={task.title}"
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/taskDetail"
+            android:elevation="20sp"
+            android:backgroundTint="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20sp"
-            android:layout_marginEnd="20sp"
-            android:layout_marginTop="20sp"
-            android:hint="@string/title_hint"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/header"
-            app:layout_constraintBottom_toTopOf="@id/description"
-            />
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintTop_toBottomOf="@id/header">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:text="@={task.title}"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20sp"
+                    android:layout_marginEnd="20sp"
+                    android:layout_marginTop="20dp"
+                    android:hint="@string/title_hint"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/description"
+                    />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:text="@={task.description}"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20sp"
+                    android:layout_marginEnd="20sp"
+                    android:layout_marginTop="20sp"
+                    android:hint="@string/description_hint"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title"
+                    app:layout_constraintBottom_toTopOf="@id/createdDate"
+                    />
+
+                <TextView
+                    android:id="@+id/createdDate"
+                    android:text="@={task.createdDate}"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20sp"
+                    android:layout_marginEnd="20sp"
+                    android:layout_marginTop="20sp"
+                    android:hint="@string/created_date_hint"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/description"
+                    app:layout_constraintBottom_toTopOf="@+id/dueDate"
+                    />
+
+                <TextView
+                    android:id="@+id/dueDate"
+                    android:text="@={task.dueDate}"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="20dp"
+
+                    android:hint="@string/due_date_hint"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/createdDate"
+                    app:layout_constraintBottom_toTopOf="parent"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
         <TextView
-            android:id="@+id/description"
-            android:text="@={task.description}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20sp"
-            android:layout_marginEnd="20sp"
-            android:layout_marginTop="20sp"
-            android:hint="@string/description_hint"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title"
-            app:layout_constraintBottom_toTopOf="@id/editStatus"
-            />
-        <EditText
-            android:id="@+id/editStatus"
-            android:text="@={task.status}"
+            android:id="@+id/StatusLabel"
+            android:text="@string/status_label"
+            android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20sp"
@@ -75,37 +136,24 @@
             android:hint="@string/status_hint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/description"
-            app:layout_constraintBottom_toTopOf="@id/createdDate"
+            app:layout_constraintTop_toBottomOf="@id/taskDetail"
+            app:layout_constraintBottom_toTopOf="@id/editStatus"
             />
 
-        <TextView
-            android:id="@+id/createdDate"
-            android:text="@={task.createdDate}"
+        <EditText
+            android:id="@+id/editStatus"
+            android:text="@={task.status}"
+            android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20sp"
             android:layout_marginEnd="20sp"
             android:layout_marginTop="20sp"
-            android:hint="@string/created_date_hint"
+            android:hint="@string/status_hint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editStatus"
-            app:layout_constraintBottom_toTopOf="@+id/dueDate"
-            />
+            app:layout_constraintTop_toBottomOf="@id/StatusLabel"
 
-        <TextView
-            android:id="@+id/dueDate"
-            android:text="@={task.dueDate}"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20sp"
-            android:layout_marginEnd="20sp"
-            android:layout_marginTop="20sp"
-            android:hint="@string/due_date_hint"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/createdDate"
             />
 
         <Button
@@ -116,12 +164,13 @@
             android:backgroundTint="@color/dark_blue"
             android:textColor="@color/white"
             android:text="@string/update_task_button"
-            android:textSize="16sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dueDate"
+            app:layout_constraintTop_toBottomOf="@id/editStatus"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.2"
+            app:layout_constraintVertical_bias="0.2
+"
             />
 
         <Button
@@ -132,12 +181,10 @@
             android:backgroundTint="@color/red"
             android:textColor="@color/white"
             android:text="@string/delete_task_button"
-            android:textSize="16sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/submit"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.35"
             />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

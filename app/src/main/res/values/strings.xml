@@ -7,10 +7,11 @@
     <string name="due_date_hint">Task due date</string>
     <string name="created_date_label">Created:</string>
     <string name="due_date_label">Due:</string>
-    <string name="update_task_header">Update or Delete Task</string>
-    <string name="update_task_button">Update</string>
-    <string name="delete_task_button">Delete</string>
+    <string name="update_task_header">Update Status or Delete Task</string>
+    <string name="update_task_button">Update Status</string>
+    <string name="delete_task_button">Delete Task</string>
     <string name="create_task_header">Create New Task</string>
     <string name="create_task_button">Create</string>
     <string name="tasks_header">Tasks</string>
+    <string name="status_label">Enter status below. Valid statuses are: Not yet started, In progress, Complete:</string>
 </resources>
